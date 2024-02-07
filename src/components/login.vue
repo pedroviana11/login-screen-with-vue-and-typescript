@@ -1,119 +1,188 @@
 <template>
-  <header>{{ msg }}</header>
+    <!-- Importa o estilo de ícones da biblioteca Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+    <!-- Define a estrutura do formulário de login -->
+    <div class="log">
+        <h1>Login</h1>
+        <form action="">
+            <!-- Campo de e-mail -->
+            <div class="mail-box">
+                <input type="email" name="email" placeholder="Insira seu e-mail.." required>
+                <!-- Ícone do usuário -->
+                <i class='bx bxs-user'></i>
+            </div>
+            <!-- Campo de senha -->
+            <div class="pass-box">
+                <input type="password" name="pass" placeholder="Insira sua senha" required>
+                <!-- Ícone de cadeado -->
+                <i class='bx bxs-lock-alt'></i>
+            </div>
 
-  <div class="corpo">
-    <div class="title">
-        <h1>Faça seu login</h1>
-    </div>
-    <div class="mail">
-        <label for="email">E-mail</label><br>
-        <input type="email" name="email" id="email" placeholder="Insira aqui seu email..." required>
-    </div>
+            <!-- Opção "Lembrar-me" e link para "Esqueci minha senha" -->
+            <div class="remember">
+                <label><input type="checkbox">Mantenha-me conectado</label>
+                <a href="#">Esqueci minha senha</a>
+            </div>
 
-    <div class="pass">
-        <label for="pass">Senha</label><br>
-        <input type="password" name="password" id="password" placeholder="Insira aqui sua senha..." required>
-    </div>
-    <div class="send">
-        <button type="submit">Entrar</button>
-    </div>
+            <!-- Botão de login -->
+            <button type="submit" class="btn">Login</button>
 
-    <div class="footer login">
-        <p>Ainda não é membro?</p>
-        <a href="">Inscreva-se aqui.</a>
+            <!-- Link para registro -->
+            <div class="register">
+                <label>Ainda não tem uma conta?</label>
+                <a href="#">Inscreva-se agora</a>
+            </div>
+        </form>
     </div>
-
-    <footer> © 2024 - Todos os direitos reservados</footer>
-  </div>
 </template>
-
-
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 
 @Options({
-  props: {
-    msg: String
-  }
+    props: {
+        msg: String
+    }
 })
 export default class login extends Vue {
-  msg!: string
+    msg!: string
 }
 </script>
 
 <style>
+/* Estilos CSS */
+
+/* Reset de estilos padrão do navegador */
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
+/* Estilos para o corpo da página */
 body {
-    background-color: rgb(0, 0, 0);
-    
-    align-content: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
-}
-.title {
-    margin: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 16px;
-} 
-
-.mail {
-    margin: 15px;
-
-    
+    min-height: 100vh;
+    background-image: linear-gradient(45deg,#b60572,#2943b8);
 }
 
-.mail input {
-    background-color: rgba(128, 128, 128, 0.192);
-    border: 2px groove rgba(0, 0, 0, 0.377);
+/* Estilos para a caixa de login */
+.log {
+    width: 420px;
+    background: transparent;
+    color: #fff;
+    padding: 20px;
+    border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 20px;
-    padding-right: 4px;
-    padding-left: 4px;
-    align-items: center;
 }
-.corpo {
-    padding: 20px; /* Adicione algum preenchimento ao redor do conteúdo */
-    background-color: rgb(255, 255, 255);
-    border-radius: 20px;
+
+/* Estilos para o título "Login" */
+.log h1 {
+    font-size: 36px;
     text-align: center;
-    width: 80%; /* Defina uma largura máxima para o container */
-    max-width: 400px; /* Ajuste conforme necessário */
-    
-    
 }
 
-.pass input {
-    background-color: rgba(128, 128, 128, 0.192);
-    border: 2px groove rgba(0, 0, 0, 0.377);
-    border-radius: 20px;
-    padding-right: 4px;
-    padding-left: 4px;
+/* Estilos para os campos de e-mail e senha */
+.log .mail-box , .pass-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin:  30px 0;
 }
 
-.send button {
-    background-color: rgba(128, 128, 128, 0.192);
-    border: 2px groove rgba(0, 0, 0, 0.377);
-    border-radius: 20px;
-    padding: 2px;
-    margin: 10px;
+/* Estilos para os campos de entrada de texto */
+.mail-box input,
+.pass-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+/* Estilos para o placeholder dos campos de entrada */
+.pass-box input input::placeholder,
+.mail-box input input::placeholder {
+    color: #fff;
+}
+
+/* Estilos para os ícones dos campos */
+.log .mail-box i,
+.log .pass-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+/* Estilos para a opção "Lembrar-me" e o link "Esqueci minha senha" */
+.log .remember {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+.log .remember label input {
+    accent-color: #fff;
+    margin-right: 5px;
+}
+
+.log .remember a {
+    color: #fff;
+    text-decoration: none;
+    margin-top: 3px;
+}
+
+.log .remember a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para o botão de login */
+.log .btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, .1);
     cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
+/* Estilos para o link "Inscreva-se agora" */
+.log .register {
+    font-size: 14.5px;
+    text-align: center;
+    margin-top: 20px 0 15px;
 
-footer {
-    position: fixed; /* Define a posição fixa */
-    bottom: 0; /* Alinha o footer na parte inferior */
-    left: 0; /* Alinha o footer à esquerda */
-    width: 100%; /* Ocupa toda a largura da tela */
-    background-color: #333; /* Cor de fundo do footer */
-    color: #fff; /* Cor do texto do footer */
-    text-align: center; /* Centraliza o texto */
+}
+
+.log .register a:hover{
+    text-decoration: underline;
+
+}
+
+.log .register a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding-left: 35px;
     
 }
+
 
 
 </style>
-

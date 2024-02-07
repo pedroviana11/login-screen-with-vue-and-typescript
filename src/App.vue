@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header>Sistema Alpha</header>
+   
     <Login /> <!-- Usando o componente Login aqui -->
   </div>
 </template>
