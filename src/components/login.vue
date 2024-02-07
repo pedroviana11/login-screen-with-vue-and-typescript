@@ -14,7 +14,7 @@
             </div>
             <!-- Campo de senha -->
             <div class="pass-box">
-                <input type="password" name="pass" placeholder="Insira sua senha" required>
+                <input type="password" name="pass" placeholder="Insira sua senha..." required>
                 <!-- Ícone de cadeado -->
                 <i class='bx bxs-lock-alt'></i>
             </div>
@@ -66,13 +66,18 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: linear-gradient(45deg,#b60572,#2943b8);
+    background: url('../assets/background3.jpg');
+    background-position: center;
+    background-size: cover;
+    /* background-image: linear-gradient(45deg,#b60572,#2943b8); */
+
+
 }
 
 /* Estilos para a caixa de login */
 .log {
     width: 420px;
-    background: transparent;
+    background: #00000070;
     color: #fff;
     padding: 20px;
     border: 2px solid rgba(255, 255, 255, .2);
@@ -129,8 +134,12 @@ body {
     justify-content: space-between;
     font-size: 14.5px;
     margin: -15px 0 15px;
+    align-items: center;
 }
+.log .remember a {
+    font-weight: bold;
 
+}
 .log .remember label input {
     accent-color: #fff;
     margin-right: 5px;
@@ -150,7 +159,7 @@ body {
 .log .btn {
     width: 100%;
     height: 45px;
-    background: #fff;
+    background: #ffffff81;
     border: none;
     outline: none;
     border-radius: 40px;
@@ -160,6 +169,10 @@ body {
     color: #333;
     font-weight: 600;
     margin-bottom: 20px;
+}
+
+.log .btn:hover {
+    background: #ffffffab;
 }
 
 /* Estilos para o link "Inscreva-se agora" */
@@ -179,10 +192,17 @@ body {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    padding-left: 35px;
+    padding-left: 25px;
     
 }
 
+.log .mail-box input::placeholder {
+    color: #ffffffc0;
+}
+
+.log .pass-box input::placeholder {
+    color: #ffffffc0;
+}
 
 
 </style>
