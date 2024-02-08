@@ -1,0 +1,79 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-size: 16px;
+  line-height: normal;
+  font-weight: 400;
+}
+ 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 40px !important;
+  line-height: 48px !important;
+}
+ 
+h2 {
+  font-size: 32px !important;
+  line-height: 38.4px !important;
+}
+ 
+h3 {
+  font-size: 28px !important;
+  line-height: 33.6px !important;
+}
+ 
+h4 {
+  font-size: 24px !important;
+  line-height: 28.8px !important;
+}
+ 
+h5 {
+  font-size: 20px !important;
+  line-height: 24px !important;
+}
+ 
+h6 {
+  font-size: 18px !important;
+  line-height: 24px !important;
+  font-weight: 600 !important;
+}
+ 
+p {
+  font-size: 16px !important;
+  font-family: "Inter", sans-serif !important;
+  font-style: normal;
+}
+ 
+span {
+  font-family: "Inter", sans-serif;
+  font-size: 14px !important;
+  font-style: normal;
+}
+ 
+button {
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  line-height: normal;
+}
+ 
+label {
+  font-size: 14px !important;
+  color: #212529;
+}
+ 
+caption {
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  line-height: normal !important;
+}

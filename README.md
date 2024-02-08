@@ -1,13 +1,13 @@
-# alok
+# Vue 3 + Tailwind + PrimeVue + Vite
 
 ## Project setup
 ```
-npm install
+npm i --force
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+npm start
 ```
 
 ### Compiles and minifies for production
@@ -15,10 +15,14 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Vite Docs
+See [Link Here](https://vitejs.dev/guide/).
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Vue Docs
+See [Link Here](https://vuejs.org/guide/introduction.html).
+
+### Tailwind Docs
+See [Link Here](https://tailwindcss.com/docs/installation).
+
+### PrimeVue Docs
+See [Link Here](https://primevue.org/setup).
