@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-neutralBackground h-screen">
+  <main class="bg-neutral h-screen">
     <router-view v-slot="{ Component }">
       <transition name="scale" mode="out-in">
         <component :is="Component" />

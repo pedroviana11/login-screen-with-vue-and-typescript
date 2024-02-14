@@ -5,7 +5,8 @@
         <h4>Selecione outro ano ou faça os cadastros necessários.</h4>
     </div> 
 </template>
-<script>
+
+<script lang="ts">
 export default {
 name: 'NotCollaboratorFound', 
 }
@@ -23,23 +24,25 @@ margin-top: 150px;
 }
 
 img{
-width: 152px;
+width: 144px;
+height: 144px;
 margin-bottom: 15px;
 }
 
 h3{
 margin-bottom: 15px;
-margin-left: -60px;
+text-align: center;
 font-size: 14px;
 color:  rgba(129, 129, 129, 1);
 font-weight: 700;
 } 
 
 h4{
-margin-left: -100px;
-font-size: 12px;
+
 color:  rgba(129, 129, 129, 1);
 font-weight: 500;
+font-size: 24px;
+line-height: 130%;
 }    
 </style>
 

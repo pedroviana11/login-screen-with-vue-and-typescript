@@ -1,35 +1,67 @@
 <template>
-    <div class="topbar"> 
-        <h3>Portal de consultas - IREDE</h3>
-        <img src="@/assets/icons/profile.png" />
+  <div class="topbar">
+    <h3>Sistema de alocações - IREDE</h3>
+    <div class="user-info">
+      <img src="@/assets/icons/profile.svg" alt="Perfil do usuário" />
+      <div class="user-details">
+        <h4 class="user-name">{{ userName }}</h4>
+        <span class="user-type">{{ userType }}</span>
+      </div>
     </div>
-  </template>
-  
-  <script lang="ts" setup>
-  </script>
-  
-  
-  <style scoped>
-  
-  .topbar{
-    background-color: #0E6A74;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-  }
+  </div>
+</template>
 
-   h3{
-       margin-top: 14px;
-       margin-left: 100px;  
-       font-size: 23px;
-       letter-spacing: 0.01em;
-       color:  rgba(255, 255, 255, 1);
-  }
-  
-  img {
-     width: 50px;
-     height: 50px;
-     margin-right: 20px;
-  }
-  </style>
-  
+<script lang="ts">
+export default {
+  name: 'Topbar',
+  data() {
+    return {
+      userName: 'Usuário',
+      userType: 'Tipo de Usuário',
+    };
+  },
+};
+</script>
+
+<style scoped>
+.topbar {
+  background-color: #0e6a74;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+h3 {
+  margin-top: 14px;
+  margin-left: 100px;
+  font-size: 23px;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 1);
+}
+
+.user-info {
+  display: flex;
+  padding-right: 50px;
+  cursor: pointer;
+}
+
+.user-details {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column; 
+}
+
+.user-name {
+  margin-bottom: 5px; 
+  color: white;
+}
+
+.user-type {
+  color: #fff;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+}
+</style>

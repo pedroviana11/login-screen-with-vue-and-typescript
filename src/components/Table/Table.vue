@@ -1,13 +1,16 @@
 <template>
-    <div class="tableWrapper">
-
+  <div class="Title">
+    <Title />
+    <NewCollaborator />
+    <ExportButton />
+  </div>
+   <div class="tableWrapper">
         <div class="search-bar">
             <div class="inputSelectDiv">
               <InputCollaboratorName />
               <Select />
             </div>
             <Subtitles />
-            <ExportButton />
         </div>
 
         <div class="table"> 
@@ -15,7 +18,7 @@
           <NotCollaboratorFound v-else/>
         </div>             
         <PageNumbers />
-    </div> 
+    </div>
   </template>
   
   <script lang="ts">
@@ -26,6 +29,8 @@
    import NotCollaboratorFound from '@/components/NotCollaboratorFound/NotCollaboratorFound.vue';
    import TableContent from '@/components/TableContent/TableContent.vue';
    import PageNumbers from '@/components/PageNumbers/PageNumbers.vue';
+   import NewCollaborator from '@/components/NewCollaborator/NewCollaborator.vue';
+   import Title from '@/components/Title/Title.vue';
 
    export default {
     name: 'TableVue',
@@ -36,6 +41,8 @@
       ExportButton,
       NotCollaboratorFound,
       TableContent,
+      NewCollaborator,
+      Title,
 
       PageNumbers
       },

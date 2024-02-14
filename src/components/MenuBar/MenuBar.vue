@@ -1,8 +1,6 @@
 <template>
     <div class="bar">     
-        <div class="bar-topic">Alocações</div>
-        <div class="bar-topic">Projetos</div>
-        <div class="bar-topic">Colaboradores</div>
+        <div class="bar-topic">Gestão de Pessoas</div>
     </div>
   </template>
   
@@ -19,6 +17,7 @@
     border-color: gainsboro;
     padding: 30px;
     margin-left: 35px;
+    font-weight: bold;
    }
 
   .bar-topic{

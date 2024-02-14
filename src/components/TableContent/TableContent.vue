@@ -8,82 +8,16 @@
                 <th v-for="(month,index) in months" :key="index" >{{month}}</th>
             </tr>
         </thead>
-        <div v-if="showDialog">
-            <Dialog v-model:showDescription="showDescription"/>
+        
+        <div v-if="showDescription">
+            <Description v-model:showDescription="showDescription"/>
         </div>
-        <tbody>
-          
-            <!-- <tr v-for="collaborator in collaborators" :key="collaborator.id">
-                <td>
-                    <button @click="showDialog = true">
-                        <h3>{{ collaborator.name }} </h3>
-                    </button>
-                    <br /> 
-                    <h4>{{ collaborator.role }}</h4> 
-                </td>
-                <td>
-                        <div class="upInfo"><img src="@/components/assets/icons.png" class="imgOne"/></div>
-                        <div class="infoBelow"><img src="wallet.png" class="imgTwo"/></div>
-                </td>
-                <td>
-                    <div class="upInfo">{{ collaborator.jan[0] }} </div>
-                    <div class="infoBelow">{{ collaborator.jan[1] }}</div>
-
-                </td>
-                <td>
-                    <div class="upInfo">{{ collaborator.fev[0] }} </div>
-                    <div class="infoBelow">{{ collaborator.fev[1] }}</div>
-                </td>
-                <td>
-                    <div class="upInfo">{{ collaborator.mar[0] }} </div>
-                    <div class="infoBelow">{{ collaborator.mar[1] }}</div>
-                </td>
-                <td>
-                    <div class="upInfo">{{ collaborator.abr[0] }} </div>
-                    <div class="infoBelow">{{ collaborator.abr[1] }}</div>
-                </td>
-                <td>
-                    <div class="upInfo">{{ collaborator.mai[0] }} </div>
-                    <div class="infoBelow">{{ collaborator.mai[1] }}</div>
-                </td>
-                <td>
-                    <div class="upInfo">{{ collaborator.jun[0] }} </div>
-                    <div class="infoBelow">{{ collaborator.jun[1] }}</div>
-                </td>
-                <td>
-                    <div class="upInfo">{{ collaborator.jul[0] }} </div>
-                    <div class="infoBelow">{{ collaborator.jul[1] }}</div>
-                </td>
-                <td>
-                    <div class="upInfo">{{ collaborator.ago[0] }} </div>
-                    <div class="infoBelow">{{ collaborator.ago[1] }}</div>
-                </td>
-                <td>
-                    <div class="upInfo">{{ collaborator.set[0] }} </div>
-                    <div class="infoBelow">{{ collaborator.set[1] }}</div>
-                </td>
-                <td>
-                    <div class="upInfo">{{ collaborator.out[0] }} </div>
-                    <div class="infoBelow">{{ collaborator.out[1] }}</div>
-                </td>
-                <td>
-                    <div class="upInfo">{{ collaborator.nov[0] }} </div>
-                    <div class="infoBelow">{{ collaborator.nov[1] }}</div>
-                </td>
-                <td>
-                    <div class="upInfo">{{ collaborator.dez[0] }} </div>
-                    <div class="infoBelow">{{ collaborator.dez[1] }}</div>
-                </td>
-               
-
-            </tr> -->
-        </tbody>
+    
     </table>
 </template>
 
-<script>
+<script lang="ts">
 import Description from "@/components/Description/Description.vue";
-// import CollaboratorsData from '../../src/CollaboratorsData.json'
 
 export default {
 name: 'TableContent', 
@@ -96,7 +30,6 @@ data() {
         months: [
            'Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'
         ],
-        //  collaborators: CollaboratorsData.collaborators 
     }
 }
 }

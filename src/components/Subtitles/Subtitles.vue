@@ -1,16 +1,21 @@
+
 <template>
+
+
     <div class="subtitles">
-        <span>LEGENDAS:</span>
+        <span><!--LEGENDAS--></span>
         <div class="subtitle">
-            <img src="@/assets/icons/edit.png"/>
-            <p>Projeto alocado</p></div>
+           <!-- <img src="@/assets/icons/edit.png"/> -->
+            <p><!--Projeto alocado--></p></div>
         <div class="subtitle">
-            <img src="@/assets/icons/payment.png"/>
-            <p>Fonte pagadora</p> </div>
+            <!--<img src="@/assets/icons/payment.png"/> -->
+            <p><!--Fonte pagadora--></p> </div>
       </div>
+
+
   </template>
-  
-  <script>
+
+  <script lang="ts">
   export default {
     name: 'SubtitlesVue', 
   }
