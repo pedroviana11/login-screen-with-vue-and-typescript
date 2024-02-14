@@ -5,14 +5,6 @@
     <ExportButton />
   </div>
    <div class="tableWrapper">
-        <div class="search-bar">
-            <div class="inputSelectDiv">
-              <InputCollaboratorName />
-              <Select />
-            </div>
-            <Subtitles />
-        </div>
-
         <div class="table"> 
           <TableContent v-if="collaboratorFound"/>
           <NotCollaboratorFound v-else/>
@@ -22,12 +14,9 @@
   </template>
   
   <script lang="ts">
-   import InputCollaboratorName from '@/components/InputCollaboratorName/InputCollaboratorName.vue';
-   import Select from '@/components/SelectYears/SelectYears.vue';
-   import Subtitles from '@/components/Subtitles/Subtitles.vue';
    import ExportButton from '@/components/ExportButton/ExportButton.vue';
    import NotCollaboratorFound from '@/components/NotCollaboratorFound/NotCollaboratorFound.vue';
-   import TableContent from '@/components/TableContent/TableContent.vue';
+  //  import TableContent from '@/components/TableContent/TableContent.vue';
    import PageNumbers from '@/components/PageNumbers/PageNumbers.vue';
    import NewCollaborator from '@/components/NewCollaborator/NewCollaborator.vue';
    import Title from '@/components/Title/Title.vue';
@@ -35,12 +24,9 @@
    export default {
     name: 'TableVue',
     components: {
-      InputCollaboratorName,
-      Select,
-      Subtitles,
       ExportButton,
       NotCollaboratorFound,
-      TableContent,
+      // TableContent,
       NewCollaborator,
       Title,
 

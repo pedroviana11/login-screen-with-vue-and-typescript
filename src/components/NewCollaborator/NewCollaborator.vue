@@ -20,7 +20,7 @@
     border: 2px solid rgba(48, 0, 129, 1);
     font-weight: 700;
     background: none;
-    width: 188px;
+    width: 230px;
     height: 42px;
     border-radius: 8px;
     display: flex;

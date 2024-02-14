@@ -15,6 +15,8 @@
     color: rgba(61, 61, 61, 1);
     font-size: 18px;
     display: flex;
+    margin-left: 65px;
+    font-weight: bold;
    }
   
   

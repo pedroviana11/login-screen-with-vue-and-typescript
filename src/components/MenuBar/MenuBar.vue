@@ -24,6 +24,7 @@
    margin-left: 50px;
    color: rgba(61, 61, 61, 1);
    font-size: 18px;
+   margin-left: 65px;
   }
    
   .bar-topic:hover {

@@ -3,7 +3,6 @@
     <SideBar />
     <TopBar />
     <MenuBar />
-    <Title />
     <Table />
   
 </div>
@@ -16,7 +15,7 @@ import SideBar from '@/components/SideBar/SideBar.vue';
 import TopBar from '@/components/TopBar/TopBar.vue';
 import MenuBar from '@/components/MenuBar/MenuBar.vue';
 import Table from '@/components/Table/Table.vue';
-import Title from '@/components/Title/Title.vue';
+
 export default defineComponent({
   name: "initialView",
   computed: {
@@ -30,7 +29,6 @@ export default defineComponent({
     };
   },
   components:{
-    Title,
     Table,
     TopBar,
     MenuBar,
