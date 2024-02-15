@@ -16,15 +16,12 @@
     border-bottom: solid 2px;
     border-color: gainsboro;
     padding: 30px;
-    margin-left: 35px;
     font-weight: bold;
    }
 
   .bar-topic{
-   margin-left: 50px;
    color: rgba(61, 61, 61, 1);
    font-size: 18px;
-   margin-left: 65px;
   }
    
   .bar-topic:hover {

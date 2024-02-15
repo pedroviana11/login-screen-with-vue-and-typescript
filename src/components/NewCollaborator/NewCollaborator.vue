@@ -15,7 +15,6 @@
   <style scoped> 
    
   button{
-    margin-left: auto;
     color:  rgba(48, 0, 129, 1);
     border: 2px solid rgba(48, 0, 129, 1);
     font-weight: 700;
@@ -26,7 +25,6 @@
     display: flex;
     
     align-items: center;
-    margin-right: 20px;
   }
 
    button:hover{

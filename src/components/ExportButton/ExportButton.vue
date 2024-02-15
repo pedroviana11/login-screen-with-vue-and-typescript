@@ -25,7 +25,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 90px;
   }
   img{
     width: 20px;

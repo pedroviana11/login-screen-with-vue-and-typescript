@@ -28,12 +28,11 @@ export default {
   background-color: #0e6a74;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 15px;
 }
 
 h3 {
-  margin-top: 14px;
-  margin-left: 100px;
   font-size: 23px;
   letter-spacing: 0.01em;
   color: rgba(255, 255, 255, 1);

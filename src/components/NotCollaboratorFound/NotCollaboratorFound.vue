@@ -20,7 +20,8 @@ name: 'NotCollaboratorFound',
     justify-content: center;
     align-items: center;
     flex-direction: column;
-margin-top: 150px;
+    height: 100%;
+    width: 100%;
 }
 
 img{

@@ -1,9 +1,11 @@
 <template>
-<div>
+<div class="flex">
     <SideBar />
-    <TopBar />
-    <MenuBar />
-    <Table />
+    <div class="flex flex-col w-screen">
+      <TopBar />
+      <MenuBar />
+      <Table />
+    </div>
   
 </div>
 </template>

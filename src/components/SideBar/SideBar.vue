@@ -6,7 +6,7 @@
         </div>
           <div class="imgSection">
             <vue-feather class="pi pi-briefcase change"></vue-feather>
-            <InputText v-tooltip="'Enter your username'" type="text" placeholder="Right" />
+            <!-- <InputText v-tooltip="'Enter your username'" type="text" placeholder="Right" /> -->
             <!--Gestão de Projetos-->
         </div>
         <div class="imgSection">
@@ -40,7 +40,7 @@
   writing-mode: vertical-lr;
   height: 100%;
   width: 78px;
-  position: fixed;
+  /* position: fixed; */
   background-color: rgba(255, 255, 255, 1);
   display: flex;
   box-shadow: 0px 5px 10px 0px rgba(31, 31, 31, 0.2);
