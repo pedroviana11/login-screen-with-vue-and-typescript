@@ -16,6 +16,7 @@
     font-size: 18px;
     display: flex;
     font-weight: bold;
+    margin-bottom: 15px;
    }
   
   

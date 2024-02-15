@@ -15,7 +15,7 @@
     background-color: rgba(255, 255, 255, 1);
     border-bottom: solid 2px;
     border-color: gainsboro;
-    padding: 30px;
+    padding: 30px 30px 30px 40px;
     font-weight: bold;
    }
 

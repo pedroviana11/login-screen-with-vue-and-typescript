@@ -29,7 +29,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 15px 15px 15px 40px;
 }
 
 h3 {

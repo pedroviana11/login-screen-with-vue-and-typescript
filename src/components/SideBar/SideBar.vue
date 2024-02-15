@@ -5,24 +5,24 @@
         
         </div>
           <div class="imgSection">
-            <vue-feather class="pi pi-briefcase change"></vue-feather>
-            <!-- <InputText v-tooltip="'Enter your username'" type="text" placeholder="Right" /> -->
+            <vue-feather class="pi pi-briefcase change" v-tooltip="'Gestão de Alocações'"></vue-feather>
+
             <!--Gestão de Projetos-->
         </div>
         <div class="imgSection">
-          <vue-feather class="pi pi-book change"></vue-feather>
+          <vue-feather class="pi pi-book change" v-tooltip="'Gestão de Projetos'" ></vue-feather>
           <!--Gestão de Pessoas-->
         </div>
         <div class="imgSection">
-          <vue-feather class="pi pi-users change"></vue-feather>
+          <vue-feather class="pi pi-users change" v-tooltip="'Gestão de Pessoas'"></vue-feather>
           <!--Relatórios e COnsultas-->
         </div>
         <div class="imgSection">
-          <vue-feather class="pi pi-dollar change"></vue-feather> 
+          <vue-feather class="pi pi-dollar change" v-tooltip="'Relatórios e Consultas'"></vue-feather> 
           <!--Relatórios e COnsultas-->
         </div>
         <div class="imgSection">
-          <vue-feather class="pi pi-shield change" overlay="teste de nomees"></vue-feather>
+          <vue-feather class="pi pi-shield change" v-tooltip="'Infra e Segurança'"></vue-feather>
           <!--Infra e Segurança-->
           </div>
   </div>
@@ -44,6 +44,7 @@
   background-color: rgba(255, 255, 255, 1);
   display: flex;
   box-shadow: 0px 5px 10px 0px rgba(31, 31, 31, 0.2);
+  
  }
 
  .imgSection{
@@ -69,13 +70,20 @@
   font-size: 24px;
   color:#300081;
  }
- .imgSection vue-feather{
-  margin-top: 22px;
- }
+ 
  
 
  .imgSection img{
   margin-top: 10px;
  }
+
+
+ .imgSection vue-feather{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  margin-top: -4px;
+  border-radius: 5px;
+  padding: 27px;
+}
 </style>
 
