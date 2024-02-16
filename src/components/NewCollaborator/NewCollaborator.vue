@@ -17,7 +17,7 @@
   button{
     color:  rgba(48, 0, 129, 1);
     border: 2px solid rgba(48, 0, 129, 1);
-    font-weight: 700;
+    font-family: "Inter", sans-serif;
     background: none;
     width: 230px;
     height: 42px;

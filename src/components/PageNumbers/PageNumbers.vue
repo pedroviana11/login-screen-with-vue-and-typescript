@@ -1,11 +1,9 @@
 <template>
-    <div class="card">
-      
-        <!-- <Paginator :rows="1" :totalRecords="120" template=" JumpToPageDropdown FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
-            currentPageReportTemplate=" {first} - {last} de {totalRecords}" /> -->
-      
-    </div>
-  </template>
+  <div class="card">
+      <Paginator :rows="10" :totalRecords="120" :rowsPerPageOptions="[10, 20, 30]"></Paginator>
+  </div>
+</template>
+
   
   <script lang="ts">
   export default {
@@ -16,12 +14,7 @@
   
   <style scoped> 
    
-  /*
-   div{
-    height: 80px;
-    border-top: solid 1px;
-   }
-   */ 
+ 
   </style>
   
 

@@ -44,6 +44,7 @@
     background-color:  rgba(255, 255, 255, 1);
     border-radius: 8px;
     width: 100%;
+
    }
   
    .search-bar{
@@ -55,7 +56,7 @@
     }
  
   .table{
-    padding:0px 0px 150px 0px ;  
+    padding:10px 10px 0px 10px ;  
     display: flex;
     justify-content: center;
     align-items: center;
