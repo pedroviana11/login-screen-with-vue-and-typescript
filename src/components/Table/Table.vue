@@ -14,7 +14,7 @@
       <PageNumbers />
     </div>
   </section>
-  </template>
+</template>
   
   <script lang="ts">
    import ExportButton from '@/components/ExportButton/ExportButton.vue';
