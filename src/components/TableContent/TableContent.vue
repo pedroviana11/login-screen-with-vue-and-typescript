@@ -1,7 +1,8 @@
 <template>
     <div class="card w-full">
-        <DataTable :value="customers" v-model:filters="filters" filterDisplay="row" dataKey="name" :globalFilterFields="['name', 'Perfil', 'Nível', 'Email', 'Sede', 'Status']">
+        <DataTable :value="customers" v-model:filters="filters" filterDisplay="row" dataKey="name" :globalFilterFields="['name', 'perfil', 'nivel', 'email', 'sede', 'status']">
             <template #empty><NotCollaboratorFound /></template>
+
             <template #loading> Loading customers data. Please wait. </template>
             <Column field="name" header="Nome completo e social" style="min-width: 12rem">
                 <template #body="{ data }">
@@ -10,57 +11,79 @@
                 <template #filter="{ filterModel, filterCallback }">
                     <IconField iconPosition="left">
                         <InputIcon>
-                            <i class="pi pi-search" />
+                            <i class="pi pi-search"/>
                         </InputIcon>
-                        <InputText v-model="filterModel.value" type="text" @input="filterCallback()" class="p-column-filter" placeholder="Pesquisar por nome" />
+                        <InputText  v-model="filterModel.value" type="text" @input="filterCallback()" placeholder="Pesquisar por nome" />
                     </IconField>
                 </template>
             </Column>
-            <Column header="Perfil" filterField="Perfil" style="min-width: 12rem">
+            <Column header="perfil" filterField="perfil" style="min-width: 12rem">
                 <template #body="{ data }">
                     <div class="flex align-items-center gap-2">
-                        <span>{{ data.Perfil }}</span>
+                        <span>{{ data.perfil }}</span>
                     </div>
                 </template>
                 <template #filter="{ filterModel, filterCallback }">
-                    <InputText v-model="filterModel.value" type="text" @input="filterCallback()" class="p-column-filter" placeholder="Filtrar" />
+                    <MultiSelect v-model="filterModel.value" @change="filterCallback()" :options="levels" optionLabel="name" placeholder="Any" class="p-column-filter" style="min-width: 14rem" :maxSelectedLabels="1">
+                <template #option="slotProps">
+                    <div class="flex align-items-center gap-2">
+                        <span>{{ slotProps.option.name }}</span>
+                    </div>
+                </template>
+            </MultiSelect>
                 </template>
             </Column>
-            <Column header="Nível" filterField="Nível" style="min-width: 12rem">
+            <Column header="nivel" filterField="nivel" style="min-width: 12rem">
                 <template #body="{ data }">
                     <div class="flex align-items-center gap-2">
-                        <span>{{ data.Nível }}</span>
+                        <span>{{ data.nivel }}</span>
                     </div>
                 </template>
                 <template #filter="{ filterModel, filterCallback }">
-                    <InputText v-model="filterModel.value" type="text" @input="filterCallback()" class="p-column-filter" placeholder="Filtrar" />
+                    <MultiSelect v-model="filterModel.value" @change="filterCallback()" :options="levels" optionLabel="name" placeholder="Any" class="p-column-filter" style="min-width: 14rem" :maxSelectedLabels="1">
+                <template #option="slotProps">
+                    <div class="flex align-items-center gap-2">
+                        <span>{{ slotProps.option.name }}</span>
+                    </div>
+                </template>
+            </MultiSelect>
                 </template>
             </Column>
-            <Column header="Email" style="min-width: 12rem">
+            <Column header="email" style="min-width: 12rem">
                 <template #body="{ data }">
                     <div class="flex align-items-center gap-2">
-                        <span>{{ data.Email }}</span>
+                        <span>{{ data.email }}</span>
                     </div>
                 </template>
             </Column>
-            <Column header="Sede" filterField="Sede" style="min-width: 12rem">
+            <Column header="sede" filterField="sede" style="min-width: 12rem">
                 <template #body="{ data }">
                     <div class="flex align-items-center gap-2">
-                        <span>{{ data.Sede }}</span>
-                    </div>
-                </template>
-                <template #filter="{ filterModel, filterCallback }">
-                    <InputText v-model="filterModel.value" type="text" @input="filterCallback()" class="p-column-filter" placeholder="Filtrar" />
-                </template>
-            </Column>
-            <Column header="Status" filterField="Status" style="min-width: 12rem">
-                <template #body="{ data }">
-                    <div class="flex align-items-center gap-2">
-                        <span>{{ data.Status }}</span>
+                        <span>{{ data.sede }}</span>
                     </div>
                 </template>
                 <template #filter="{ filterModel, filterCallback }">
-                    <InputText v-model="filterModel.value" type="text" @input="filterCallback()" class="p-column-filter" placeholder="Filtrar" />
+                    <MultiSelect v-model="filterModel.value" @change="filterCallback()" :options="levels" optionLabel="name" placeholder="Any" class="p-column-filter" style="min-width: 14rem" :maxSelectedLabels="1">
+                <template #option="slotProps">
+                    <div class="flex align-items-center gap-2">
+                        <span>{{ slotProps.option.name }}</span>
+                    </div>
+                </template>
+            </MultiSelect>
+                </template>
+            </Column>
+            <Column header="status" filterField="status" style="min-width: 12rem">
+                <template #body="{ data }">
+                    <div class="flex align-items-center gap-2">
+                        <span>{{ data.status }}</span>
+                    </div>
+                </template>
+                <template #filter="{ filterModel, filterCallback }">
+                    <Dropdown v-model="filterModel.value" @change="filterCallback()" :options="statues" placeholder="Select One" class="p-column-filter" style="min-width: 12rem" :showClear="true">
+                <!-- <template #option="slotProps"> -->
+                    <!-- {{ slotProps.option }} -->
+                <!-- </template> -->
+            </Dropdown>
                 </template>
             </Column>
         </DataTable>
@@ -72,28 +95,38 @@ import { ref } from 'vue';
 import { FilterMatchMode } from 'primevue/api';
 import NotCollaboratorFound from '@/components/NotCollaboratorFound/NotCollaboratorFound.vue';
 import DataTable from 'primevue/datatable';
-import Column from 'primevue/column';        
+import Column from 'primevue/column';   
+     
 
 const customers = ref([
-    {name: "Caio" , Perfil: "Full stack", Nível: "junior" , Email: 'sdasdasdshash@gmail.com', Sede: "felino" , Status: "ativa" },
-    {name: "Caio" , Perfil: "Full stack", Nível: "junior" , Email: 'sdasdasdshash@gmail.com', Sede: "felino" , Status: "ativa" },
-    {name: "Caio" , Perfil: "Full stack", Nível: "junior" , Email: 'sdasdasdshash@gmail.com', Sede: "felino" , Status: "ativa" },
-    {name: "Caio" , Perfil: "Full stack", Nível: "junior" , Email: 'sdasdasdshash@gmail.com', Sede: "felino" , Status: "ativa" },
+    {name: "Caio" , perfil: "Full stack", nivel: "junior" , email: 'sdasdasdshash@gmail.com', sede: "felino" , status: "ativa" },
+    {name: "Caio" , perfil: "Full stack", nivel: "junior" , email: 'sdasdasdshash@gmail.com', sede: "felino" , status: "ativa" },
+    {name: "Caio" , perfil: "Full stack", nivel: "junior" , email: 'sdasdasdshash@gmail.com', sede: "felino" , status: "ativa" },
+    {name: "Caio" , perfil: "Full stack", nivel: "junior" , email: 'sdasdasdshash@gmail.com', sede: "felino" , status: "ativa" },
 ]);
 const filters = ref({
     name: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
-    Perfil: { value: null, matchMode: FilterMatchMode.IN },
-    Nível: { value: null, matchMode: FilterMatchMode.EQUALS },
-    Sede: { value: null, matchMode: FilterMatchMode.EQUALS },
-    Status: { value: null, matchMode: FilterMatchMode.EQUALS },
+    perfil: [{ name: 'UX', code: 'UX' },{ name: 'Front-end', code: 'FR' },{ name: 'Back-end', code: 'BAC' }],
+    nivel: [{ name: 'Bolsista', code: '01'}, { name: 'Júnior', code: '02'}, { name: 'Pleno', code: '03'}, {name: 'Sênior', code: '04'} ],
+    sede: [{ name: 'Martinho', code: 'MAR' },{ name: 'Felino', code: 'FE' }, { name: 'Manaus', code: 'MAN' },{ name: 'BS', code: 'BS' },{ name: 'Bradesco', code: 'BRA' }],
+    status: { name: 'Ativo', code: 'Inativo' },
 });
-
+const levels = ref([
+    { name: 'Bolsista' },
+    { name: 'Júnior'},
+    { name: 'Pleno'},
+    { name: 'Sênior' },
+]);
+const statues = ref(['ativa', 'inativa']);
+const loading = ref(true);
 </script>
 
-<style>
+<style scoped>
 
 .p-column-header-content{
-    background-color: red;
+    background-color: white;
 }
+
+
 
 </style>
